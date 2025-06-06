@@ -1,0 +1,30 @@
+create database avp_2_back_end;
+
+create table produtos(
+    id UUID primary key not null,
+    nome varchar(50) not null,
+    tipo varchar(50),
+    valor numeric(10,2) not null
+);
+
+
+create table compras(
+    id UUID primary key not null,
+    valorEntrada numeric(10,2) not null,
+    qtdParcelas int not null,
+    idProduto UUID not null
+);
+
+
+create table juros(
+    dataInicio timestamp not null,
+    dataFinal timestamp not null
+);
+
+create table estatistica(
+    count int not null ,
+    sum numeric(10,2) not null,
+    avg numeric(10,2) not null ,
+    sumTx numeric(10, 2) not null ,
+    avgTx numeric(10,2) not null
+)
