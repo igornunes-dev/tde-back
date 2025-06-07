@@ -1,11 +1,14 @@
 <?php
-require_once '../Model/estatistica.php';
+namespace Src\DAO;
+use PDO;
+use Src\Config\Conexao;
+use Src\Model\estatistica;
 
-class estatisticaDAO {
+class EstatisticaDAO {
     private $conn;
 
-    public function __construct($pdo) {
-        $this->conn = $pdo;
+    public function __construct() {
+        $this->conn = Conexao::getConn();
     }
 
     public function calcularEstatisticas() {
